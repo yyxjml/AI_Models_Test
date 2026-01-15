@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AIChat</title>
+    <link rel="stylesheet" href="AI.css"/>
+</head>
+<body>
+<div class="workspace">
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-logo">☰</div>
+            <button class="new-chat">新聊天</button>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <p class="nav-heading">你的对话</p>
+                <button class="nav-item active">New Chat</button>
+            </div>
+        </nav>
+        <div class="sidebar-bottom">
+            <button class="nav-item">设置</button>
+            <button class="nav-item">分享</button>
+            <button class="profile">YYX</button>
+        </div>
+    </aside>
+
+    <main class="main-pane">
+        <header class="main-header">
+            <div class="header-title">
+                <span>AIChat</span>
+                <span class="chevron">▾</span>
+            </div>
+            <div class="header-actions">
+                <button class="action">分享</button>
+                <button class="action">邀请</button>
+                <button class="action icon">⋮</button>
+            </div>
+        </header>
+
+        <div class="chat-scroll">
+            <div id="chat" class="chat-stream"></div>
+        </div>
+
+        <footer class="composer">
+            <div class="composer-box">
+                <button class="plus-btn" onclick="startNewChat()">＋</button>
+                <textarea id="msg" placeholder="发送消息..." autocomplete="off"></textarea>
+                <div class="upload-inputs">
+                    <input type="file" id="imageInput" accept="image/*" style="display:none;"/>
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt" style="display:none;"/>
+                    <input type="file" id="audioInput" accept="audio/*" style="display:none;"/>
+                </div>
+                <div class="upload-actions">
+                    <button class="upload-btn" onclick="selectImage()">🖼 图片</button>
+                    <button class="upload-btn" onclick="selectFile()">📁 文件</button>
+                    <button class="upload-btn" onclick="selectAudio()">🎤 音频</button>
+                </div>
+                <div class="composer-actions">
+                    <button class="mic-btn" aria-label="语音输入">🎤</button>
+                    <button id="sendBtn" onclick="send()" aria-label="发送消息">➤</button>
+                </div>
+            </div>
+            <div id="attachmentPreview" class="attachment-preview"></div>
+            <span class="disclaimer">AIChat 可能会产生不准确的信息，请在必要时核实。</span>
+        </footer>
+    </main>
+ </div>
+
+<script src="AI.js"></script>
+</body>
+</html>
